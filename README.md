@@ -13,7 +13,7 @@ tool.
 ## Run the calculator
 
 ```bash
-python calculator.py "2 * (3 + 4)"
+python3 calculator.py "2 * (3 + 4)"
 ```
 
 Expected output:
@@ -25,5 +25,5 @@ Expected output:
 ## Run the tests
 
 ```bash
-python -m unittest discover -s tests
+python3 -m unittest discover -s tests
 ```
