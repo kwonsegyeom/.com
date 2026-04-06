@@ -12,17 +12,17 @@ This repository now contains a small Python calculator module.
 Run the calculator with an expression:
 
 ```bash
-python calculator.py "2 + 3 * 4"
+python3 calculator.py "2 + 3 * 4"
 ```
 
 Or start it without arguments and enter an expression interactively:
 
 ```bash
-python calculator.py
+python3 calculator.py
 ```
 
 ## Testing
 
 ```bash
-python -m unittest
+python3 -m unittest
 ```
