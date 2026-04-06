@@ -70,9 +70,7 @@ class Calculator:
                 return -operand
             raise ValueError("Unsupported unary operator.")
 
-        if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):
+        if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)) and not isinstance(node.value, bool):
             return float(node.value)
-        if isinstance(node, ast.Num):  # pragma: no cover - for older Python AST nodes
-            return float(node.n)
 
         raise ValueError("Unsupported expression.")
