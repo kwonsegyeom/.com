@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="calculator-panel" aria-labelledby="calculator-title">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Interactive demo</p>
+            <h1 id="calculator-title">Calculator</h1>
+          </div>
+          <p class="subtitle">
+            Evaluate expressions safely without relying on <code>eval()</code>.
+          </p>
+        </div>
+
+        <div class="screen" aria-live="polite">
+          <label class="screen-label" for="expression-input">Expression</label>
+          <input
+            id="expression-input"
+            class="expression-input"
+            type="text"
+            inputmode="decimal"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="(12.5 + 7) / 3"
+            aria-describedby="input-hint"
+          />
+          <div class="result-strip">
+            <span class="result-label">Result</span>
+            <output id="result-output" class="result-output">0</output>
+          </div>
+          <p id="input-hint" class="hint">
+            Try the keyboard too: numbers, operators, Enter to calculate, and
+            Escape to clear.
+          </p>
+        </div>
+
+        <div class="button-grid" aria-label="Calculator controls">
+          <button type="button" class="action-button subtle" data-action="clear">
+            C
+          </button>
+          <button
+            type="button"
+            class="action-button subtle"
+            data-action="backspace"
+            aria-label="Delete the previous character"
+          >
+            DEL
+          </button>
+          <button type="button" class="action-button operator" data-value="(">
+            (
+          </button>
+          <button type="button" class="action-button operator" data-value=")">
+            )
+          </button>
+
+          <button type="button" class="action-button digit" data-value="7">7</button>
+          <button type="button" class="action-button digit" data-value="8">8</button>
+          <button type="button" class="action-button digit" data-value="9">9</button>
+          <button type="button" class="action-button operator" data-value="/">
+            /
+          </button>
+
+          <button type="button" class="action-button digit" data-value="4">4</button>
+          <button type="button" class="action-button digit" data-value="5">5</button>
+          <button type="button" class="action-button digit" data-value="6">6</button>
+          <button type="button" class="action-button operator" data-value="*">
+            *
+          </button>
+
+          <button type="button" class="action-button digit" data-value="1">1</button>
+          <button type="button" class="action-button digit" data-value="2">2</button>
+          <button type="button" class="action-button digit" data-value="3">3</button>
+          <button type="button" class="action-button operator" data-value="-">
+            -
+          </button>
+
+          <button type="button" class="action-button digit span-2" data-value="0">
+            0
+          </button>
+          <button type="button" class="action-button digit" data-value=".">.</button>
+          <button type="button" class="action-button operator" data-value="+">
+            +
+          </button>
+
+          <button
+            type="button"
+            class="action-button primary span-4"
+            data-action="calculate"
+          >
+            =
+          </button>
+        </div>
+      </section>
+
+      <aside class="history-panel" aria-labelledby="history-title">
+        <div class="history-header">
+          <h2 id="history-title">History</h2>
+          <button type="button" id="clear-history" class="text-button">
+            Clear
+          </button>
+        </div>
+        <ol id="history-list" class="history-list"></ol>
+        <p id="history-empty" class="history-empty">
+          Calculations you confirm with = will appear here.
+        </p>
+      </aside>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
